@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Game Setup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="opening">
+    <h1>Select Difficulty: </h1>
+    <ion-segment color="primary" value="any" [(ngModel)]="difficulty">
+      <ion-segment-button value="any">
+        <ion-label>Any</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="easy">
+        <ion-label>Easy</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="medium">
+        <ion-label>Medium</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="hard">
+        <ion-label>Hard</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <h1>Select Type: </h1>
+    <ion-segment color="primary" value="any" [(ngModel)]="type">
+      <ion-segment-button value="any">
+        <ion-label>Any</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="multiple">
+        <ion-label>Multiple Choice</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="boolean">
+        <ion-label>True/False</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <h1>Select Amount: </h1>
+    <ion-input type="number" (keydown)="numberOnly($event)" [(ngModel)]="amount"></ion-input>
+
+    <ion-button routerLink="/game/{{categiryId}}/{{difficulty}}/{{type}}/{{amount}}" size="large" color="primary">Start
+      Game</ion-button> <br>
+  </div>
+</ion-content>

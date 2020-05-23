@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="opening" *ngIf="questions.length != 0">
+    <p *ngIf="questions.length >= index">Score: {{score}}</p>
+    <h1 *ngIf="questions.length >= index">Question {{index}} of {{questions.length}} </h1>
+    <div *ngIf="questions.length < index">
+      <div class="left">
+        <h2>Your score was {{score}}</h2>
+        <h1>{{msg}}</h1>
+      </div>
+      <img src="{{imgURL}}" alt="Random picture of a dog">
+    </div>
+    <div class="question" *ngFor="let question of questions">
+      <ng-container *ngIf="question.id == index">
+
+        <h3>{{question.question}}</h3>
+        <p class="additional">
+          <span class="category">{{question.category}}</span>
+          <span class="difficulty {{question.difficulty}}">{{question.difficulty}}</span>
+        </p>
+        <ng-container *ngFor="let choice of question.choices">
+          <ion-button color="primary" size="large" (click)="choiceSelected($event)" class="choice" expand="block">
+            {{choice}} <span *ngIf="choice == question.correctAnswer" id="correct{{question.id}}"></span>
+          </ion-button> <br>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <ion-button color="primary" id="lockinbtn" size="large" (click)="lockIn()">Lock in</ion-button>
+    <ion-button color="primary" id="nextbtn" size="large" (click)="nextQuestion()">Next</ion-button>
+  </div>
+</ion-content>

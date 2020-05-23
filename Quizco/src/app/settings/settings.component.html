@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Dark Theme</ion-label>
+      <ion-toggle color="dark" [(ngModel)]="dark" (ionChange)="toggleTheme()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Username: </ion-label>
+      <ion-input [(ngModel)]="username" (ionChange)="checkUsername()"></ion-input>
+      <ion-button (click)="updateUsername()" color="primary" *ngIf="show">Update Username</ion-button> <br>
+    </ion-item>
+  </ion-list>
+</ion-content>

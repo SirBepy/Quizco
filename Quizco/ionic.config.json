@@ -1,0 +1,8 @@
+{
+  "name": "Quizco",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

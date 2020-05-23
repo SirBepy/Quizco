@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="opening">
+    <h1>Welcome back,</h1>
+    <h2>{{username}}</h2>
+    <ion-button routerLink="/game" size="large" color="primary">Quick Match</ion-button>
+    <ion-button routerLink="/categories" size="large" color="secondary"> Categories </ion-button>
+  </div>
+</ion-content>

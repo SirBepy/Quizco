@@ -1,0 +1,50 @@
+@import "../app.component.scss";
+
+.easy {
+    color: #2dd36f;
+}
+
+.medium {
+    color: #ffc409;
+}
+
+.hard {
+    color: #eb445a;
+}
+
+.additional {
+    width: 100%;
+    text-align: left;
+
+    padding: 0.5em 1em;
+
+    .easy,
+    .medium,
+    .hard {
+        float: right;
+    }
+}
+
+#lockinbtn, #nextbtn {
+    display: none;
+}
+
+.choice {
+    margin: auto;        
+    display: inline-block; 
+    min-width: 20em;
+    margin-top: 1em;
+}
+
+p {
+    float: left;
+}
+
+.left {
+    float: left;
+}
+
+img {
+    float: right;
+    border-radius: 1em;
+}

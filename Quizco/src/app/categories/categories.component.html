@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="loading" class="loading opening">
+    <h1>Loading...</h1>
+  </div>
+  <div *ngIf="!loading" class="opening">
+    <h1>Categories</h1>
+    <div>
+      <ion-list>
+        <ion-item button *ngFor="let category of categories" routerLink="/setup/{{category.id}}">
+          <ion-label>{{category.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
